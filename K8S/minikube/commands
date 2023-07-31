@@ -1,0 +1,66 @@
+Start cluster
+minikube start
+
+Check cluster 
+kubectl get nodes
+
+Check kubectl updates
+minikube update-check
+
+Stop Cluster from runing 
+minikube stop 
+
+delete cluster 
+minikube delete
+
+check for cluster info get dns and ip
+kubectl cluster-info
+
+get the namespaces on k8s 
+kubectl get namespaces
+
+get the pods running 
+kubectl get pods -A
+
+get Services
+kubectl get services -A
+
+Deploy an app 
+ - create names spaces
+  kubectl apply -f namespace.yml
+- delete the namespaces
+   kubectl delete -f namespace.yml
+
+  - deploy the container
+    kubectl apply -f deployment.yml
+
+  - check the deployment
+    kubectl get deploytments -n development
+  - delete a pod 
+    kubectl delete pod pod-info-deployment-869667679b-kws7m -n development   
+
+check the health of t a pod
+kubectl describe pod pod-info-deployment-869667679b-688cv -n development
+remote in to a container
+kubectl get pods -n development -o wide
+minikube % kubectl exec -it busybox-55fdb79844-bx8l2 -- /bin/sh
+check logs of the pods
+kubectl get pods -n development -o wide
+kubectl logs 
+
+---
+expose the app to an lb in minikube
+
+create a tunnel
+minikube tunnel
+
+create the service 
+kubectl apply -f ...
+
+clean up
+kubectl delete -f filename.yml
+minikube delete
+
+check all resources 
+kubectl api-resources
+

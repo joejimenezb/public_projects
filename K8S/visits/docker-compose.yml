@@ -1,0 +1,12 @@
+#version is required
+version: '3'
+#what we wanted to do
+services:
+  redis-server:
+    image: 'redis'
+  
+  node-app:
+    restart: always
+    build: .
+    ports:
+      - "4001:8081" # local machine : Container
